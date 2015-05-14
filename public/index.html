@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Server Stock</title>
+    <link href="./assets/css/application.css" rel="stylesheet" >
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" >
+    <script src="./assets/js/vendor/jquery.js"></script>
+
+     
+  </head>
+  <body id="body" class="body"> 
+    <nav class="navbar navbar-default navbar-collapse navbar-fixed-top"  >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+           <a class="navbar-brand" href="#">ServerStock</a>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+        <div class="container">
+            <div class="jumbotron" >
+              <h1>ServerStock</h1>
+              <p>Proyecion en la bolsa</p>
+            </div>  
+        </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p>La informacion listada es actualizada cada 30 segundos,se muestra una tabla comparativa donde podemos obtener resultados como ASK,BID,CHANGE,y PERCENT CHANGE </p>
+        </div> 
+        <div class="col-sm-2" id="main">
+        </div> 
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" id="main-region">
+        
+      </div>
+    </div> 
+
+    <div id="main-reg" class="container">
+        <p></p>
+    </div>
+ <script type="text/html" id="mi-template">
+      <div class="col-sm-2">
+        <h5>{{ created}}</h5>  
+         <h2>{{name}}</h2>    
+         <h4>BID: {{bid}}</h4>
+         <h4>CHANGE:  {{change}}</h4>
+         <h4> PERCENT: {{percent}}</h4>
+      </div> 
+    </script>
+   
+    <script src="./assets/js/vendor/json2.js"></script>
+    
+    <script src="./assets/js/vendor/underscore.js"></script>
+    <script src="./assets/js/vendor/handlebars.js"></script>
+    <script src="./assets/js/vendor/backbone.js"></script>
+    <script src="./assets/js/vendor/backbone.marionette.js"></script>
+      <script src="./assets/js/app.js"></script>
+      <script src="./assets/js/entities/collec.js"></script>
+      <script src="./assets/js/entities/vistaTemplate.js"></script>
+       <script src="./assets/js/entities/initView.js"></script>
+       <script src="./assets/js/entities/controller.js"></script>
+    
+        
+   <script type="text/javascript">  
+     MyApp.initView.creaViews();
+     MyApp.on("start", function(){
+       MyApp.controller.controller();
+     });
+     MyApp.start();
+   </script>
+
+
+
+
+  </body>
+</html>
